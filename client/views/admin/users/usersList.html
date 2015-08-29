@@ -1,0 +1,21 @@
+<template name="usersList">
+  <h4 class="ui dividing header"> Usuarios </h4>
+  <div class="ui basic segment" data-selectable-context="adminView">
+      <table class="ui two column celled table">
+      <thead>
+        <tr>
+          <th>Nombre de usuario</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each users}}
+          <tr>
+            <td>{{username}}</td>
+            <td>{{getFirstEmail emails}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+      </table>
+    </div>
+</template>

@@ -1,0 +1,42 @@
+.flex.column {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.full.height {
+  height: auto;
+
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.full.width {
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
+  .flex.column;
+}
+.main.silas.segment.pushable {
+  .flex.column;
+  .full.height;
+  .full.width;
+}
+
+.pusher {
+  .full.height;
+  .flex.column;
+}
