@@ -1,0 +1,12 @@
+<template name="appLayout">
+  {{> header }}
+<div class="ui bottom attached main saetis segment pushable">
+  {{> saetisMenu}}
+    <div class="fitted pusher">
+	     <div class="ui basic full height bottom attached clearing segment" 
+      style="overflow-y: auto; overflow-x: hidden; background-color: #f5f5f5;">
+	        {{> yield }}
+	    </div>
+    </div>
+  </div>
+</template>
