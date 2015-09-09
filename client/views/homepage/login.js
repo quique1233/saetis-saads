@@ -10,5 +10,26 @@ Template.login.events({
         Router.go('admin.users');
   	  }
   	});
+  },
+  'click [name="registerUser"]':function() {
+  	$('.ui.modal').modal({
+  		blurring: true,
+    onApprove : function() {
+      var username = $('[name="username"]').val(),
+  	  email = $('[name="email"]').val(),
+  	  password = $('[name="password"]').val();
+  	
+  	  //TODO anadir validaciones para los campos
+
+      Meteor.call('Users.addNewUser', username, email, password, function(e) {
+    	if (e) {
+          console.log('ERROR!');
+    	} else {
+    	  console.log('Created new user');
+    	}
+      });
+    }
+  }).modal('show');
+
   }
 });
