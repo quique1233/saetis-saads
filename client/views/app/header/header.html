@@ -3,14 +3,16 @@
   <a class="header item">
     SAETIS <i class="tasks icon"></i>
   </a>
+  {{#if currentUser}}
   <div class="right menu">
-    <div class="ui simple dropdown item">
-    Kenji
+    <div class="ui simple tiny dropdown item">
+    {{currentUser.username}}
     <i class="dropdown icon"></i>
     <div class="menu">
-      <a class="item">Salir</a>
+      <a name="logout" class="item">Salir</a>
     </div>
   </div>
   </div>
+  {{/if}}
 </div>
 </template>	
