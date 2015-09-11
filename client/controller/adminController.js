@@ -1,4 +1,4 @@
-Router.route('/', {
+Router.route('/index', {
 	name: 'application.index',
 	action: function() {
 		this.render('adminView');

@@ -1,4 +1,4 @@
-Router.route('/homepage', {
+Router.route('/', {
 	name: 'application.homepage',
 	controller: 'HomepageController',
 	action: 'goToHomepage'
