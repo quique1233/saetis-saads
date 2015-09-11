@@ -6,8 +6,19 @@
     </div>
   </h3>
   <div class="ui buttons">
-      <div class="ui blue submit button">Registrar</div>
+      <div class="ui blue submit button" action-name="registerCompany">Registrar</div>
       <div class="or" data-text="o"></div>
       <div class="ui green button">Verificar Nombre</div>
+  </div>
+  <div class="ui small modal registerCompany">
+   {{# autoform schema=schema onSubmit=onSubmit title=title submitButtonLabel="Registrar"
+       cancelButtonLabel="Cancelar" icon="add user"}}
+    <div class="field">
+      <div class="ui left icon input">
+        <input name="register-password" type="password" placeholder="Contraseña">
+        <i class="lock icon"></i>
+      </div>
+    </div>
+   {{/autoform}}
   </div>
 </template>

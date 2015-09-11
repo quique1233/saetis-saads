@@ -1,5 +1,5 @@
 Template.login.onRendered(function() {
-  $('.ui.modal').modal({
+  this.$('.ui.modal').modal({
   		blurring: true,
     onApprove : function() {
       $('[name="registerUser"]').trigger('saetis:registerUser');
@@ -21,7 +21,8 @@ Template.login.events({
   	});
   },
   'click [name="registerUser"]': function() {
-     $('.ui.modal').modal('show');
+    console.log('aaaaaaaaaaaaaa');
+     $('.ui.modal.register').modal('show');
   },
   'saetis:registerUser': function() {
     var username = $('[name="register-username"]').val(),

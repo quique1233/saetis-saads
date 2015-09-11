@@ -8,6 +8,7 @@ NoticesSchema = new SimpleSchema({
 
   publicationDate: {
     type: Date,
+    label: 'Fecha de publicacion',
     autoValue: function() {
       if (this.isInsert) {
         return new Date;
@@ -21,12 +22,14 @@ NoticesSchema = new SimpleSchema({
 
   summary: {
     type: String,
+    label: 'Resumen',
     max: 20,
     min: 3
   },
 
   extraText: {
-    type: String
+    type: String,
+    label: 'Texto formulario'
   },
 
   publisherName: {
