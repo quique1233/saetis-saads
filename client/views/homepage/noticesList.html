@@ -1,4 +1,4 @@
-<template name="notices">
+<template name="noticesList">
   <h3 class="ui header">
     <i class="newspaper icon"></i>
     <div class="content">
@@ -40,5 +40,25 @@
         </div>
       </div>
     </div>
+    {{#each notices}}
+    <div class="event">
+      <div class="label">
+        <a href="#" class="borderless item">
+          <i class="info circle icon"></i>
+        </a>
+      </div>
+      <div class="content">
+        <div class="date">
+          {{getPastTime publicationDate}}
+        </div>
+        <div class="summary">
+          {{getSummary publisherName summary}}
+        </div>
+        <div class="extra text">
+          {{extraText}}
+        </div>
+      </div>
+    </div>
+    {{/each}}
   </div>
 </template>

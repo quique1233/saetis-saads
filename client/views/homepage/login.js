@@ -1,3 +1,12 @@
+Template.login.onRendered(function() {
+  $('.ui.modal').modal({
+  		blurring: true,
+    onApprove : function() {
+      $('[name="registerUser"]').trigger('saetis:registerUser');
+    }
+  });
+});
+
 Template.login.events({
   'click .ui.blue.submit.button': function(event, tmp) {
     var username = $('input[name="username"]').val(),
@@ -11,25 +20,22 @@ Template.login.events({
   	  }
   	});
   },
-  'click [name="registerUser"]':function() {
-  	$('.ui.modal').modal({
-  		blurring: true,
-    onApprove : function() {
-      var username = $('[name="username"]').val(),
-  	  email = $('[name="email"]').val(),
-  	  password = $('[name="password"]').val();
+  'click [name="registerUser"]': function() {
+     $('.ui.modal').modal('show');
+  },
+  'saetis:registerUser': function() {
+    var username = $('[name="register-username"]').val(),
+  	  email = $('[name="register-email"]').val(),
+  	  password = $('[name="register-password"]').val();
   	
   	  //TODO anadir validaciones para los campos
 
-      Meteor.call('Users.addNewUser', username, email, password, function(e) {
-    	if (e) {
-          console.log('ERROR!');
-    	} else {
-    	  console.log('Created new user');
-    	}
-      });
-    }
-  }).modal('show');
-
+    Meteor.call('Users.addNewUser', username, email, password, function(e, r) {
+      if (e) {
+        console.log('ERROR!');
+      } else {
+      console.log('Created new user');
+      }
+    });
   }
 });

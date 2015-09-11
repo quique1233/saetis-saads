@@ -1,19 +1,20 @@
 Router.route('/homepage', {
 	name: 'application.homepage',
-	action: function() {
-		this.layout('homepageLayout');
-		this.render('homepage');
-	}
+	controller: 'HomepageController',
+	action: 'goToHomepage'
 })
 
-/*AdminController = RouteController.extend({
+HomepageController = RouteController.extend({
 	subscriptions: function() {
-		return Meteor.subscribe('Users.all');
+		return Meteor.subscribe('Notices.recent');
 	},
 	goToHomepage: function() {
 		var self = this;
-		self.render('usersList', {data: {
-			users: Meteor.users.find()
-		}});
+		self.layout('homepageLayout',{
+  		data: {
+        notices: Notices.find({})  
+      }
+		});
+		self.render('homepage');
 	}
-});*/
+});
